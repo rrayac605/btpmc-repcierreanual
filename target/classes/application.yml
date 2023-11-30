@@ -1,0 +1,42 @@
+server:
+  port: ${portrepcierreanualBatch}
+
+spring:
+  data:
+    mongodb:
+      authentication-database: ${authenticationdatabaseMongo}
+      username: ${usrMongoCifras}
+      password: ${pwMongoCifras}
+      database: ${databaseMongo}
+      port: ${portMongo}
+      host: ${hostMongo}
+  batch:
+    job:
+      enabled: false
+  application:
+    name: btpmc-repcierreanual
+logging:
+  file: ${fileLogBatchrepcierreanual}
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.demo: INFO
+    org.hibernate.SQL: INFO
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: restart,health
+cron.expression.repcierreanualBatch: ${cron.expression.repcierreanualBatch}
+cron.expression.repcierreanualBatchCleaner: ${cron.expression.repcierreanualBatchCleaner}
+cron.expression.repcierreanualBatchRestart: ${cron.expression.repcierreanualBatchRestart}
+fileReportes: ${fileReportes}
+sftpHost: ${sftpHost}
+sftpPort: ${sftpPort}
+sftpUser: ${sftpUser}
+sftpPassword: ${sftpPassword}
+sftp: ${sftp}
